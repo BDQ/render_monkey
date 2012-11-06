@@ -17,6 +17,7 @@ var server = http.createServer(function(req, res){
 
         try{
           data = JSON.parse(data);
+          data['_'] = require('underscore');
         }catch(e){
           console.log('500 - unable to parse json data');
           res.writeHead(500, "INTERNAL_SERVER_ERROR");
